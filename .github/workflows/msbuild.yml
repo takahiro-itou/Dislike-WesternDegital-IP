@@ -2,7 +2,7 @@
 name : MSBuild
 
 env :
-  SOLUTION_FILE_PATH : .
+  SOLUTION_FILE_PREFIX : SampleView
 
 jobs :
   build :
@@ -12,12 +12,14 @@ jobs :
       fail-fast : false
 
       matrix :
-        build-type   : [ Release, Debug ]
+        build-type : [ Release, Debug ]
+        target-ver : [ "", .NetOld ]
 
     steps :
-      - uses : actions/checkout@v4
+      - name : Checkout
+        uses : actions/checkout@v4
         with :
-          submodules : 'true'
+          submodules : recursive
 
       - name : Setup MSBuild
         uses : microsoft/setup-msbuild@v2
@@ -31,8 +33,10 @@ jobs :
 
       - name : Build
         working-directory : ${{ github.workspace }}
-        run : >
-          msbuild -restore -t:Rebuild -p:Platform=x64 -p:Configuration="${{ matrix.build-type }}" "${{ env.SOLUTION_FILE_PATH }}"
+        run  : >
+          msbuild -restore -t:Rebuild -p:Platform=x64 -p:Configuration="${{ matrix.build-type }}" "${{ env.solution-file }}"
+        env  :
+          solution-file : "${{ env.SOLUTION_FILE_PREFIX }}${{ matrix.target-ver }}.sln"
         shell : pwsh
 
 on :
@@ -40,3 +44,4 @@ on :
     branches : [ "master", "develop" ]
   pull_request :
     branches : [ "master", "develop" ]
+  workflow_dispatch :
