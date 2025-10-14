@@ -2,16 +2,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <MyType>WindowsForms</MyType>
     <OutputType>WinExe</OutputType>
+    <Platforms>AnyCPU;x64;Win32</Platforms>
+    <RootNamespace>ViewVb</RootNamespace>
+    <StartupObject>ViewVb.My.MyApplication</StartupObject>
     <TargetFrameworks>
       net6.0-windows;
       net48;
     </TargetFrameworks>
-    <StartupObject>ViewVb.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
-    <MyType>WindowsForms</MyType>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
-    <Platforms>AnyCPU;x64;Win32</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
