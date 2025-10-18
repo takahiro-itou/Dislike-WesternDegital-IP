@@ -25,18 +25,18 @@ Partial Class MainView
         Dim resources As System.ComponentModel.ComponentResourceManager = _
             New System.ComponentModel.ComponentResourceManager(GetType(MainView))
 
-        mnuMain = New System.Windows.Forms.MenuStrip()
-        mnuFile = New System.Windows.Forms.ToolStripMenuItem()
-        mnuFileExit = New System.Windows.Forms.ToolStripMenuItem()
-        mnuRun = New System.Windows.Forms.ToolStripMenuItem()
-        mnuRunCommand = New System.Windows.Forms.ToolStripMenuItem()
+        mnuMain = New MenuStrip()
+        mnuFile = New ToolStripMenuItem()
+        mnuFileExit = New ToolStripMenuItem()
+        mnuRun = New ToolStripMenuItem()
+        mnuRunCommand = New ToolStripMenuItem()
 
-        dlgOpen = New System.Windows.Forms.OpenFileDialog()
+        dlgOpen = New OpenFileDialog()
 
-        Label1 = New System.Windows.Forms.Label()
-        txtCommand = New System.Windows.Forms.TextBox()
-        btnRun = New System.Windows.Forms.Button()
-        txtOutput = New System.Windows.Forms.TextBox()
+        Label1 = New Label()
+        txtCommand = New TextBox()
+        btnRun = New Button()
+        txtOutput = New TextBox()
 
         mnuMain.SuspendLayout()
         Me.SuspendLayout()
@@ -45,13 +45,13 @@ Partial Class MainView
         ' mnuMain
         '
         resources.ApplyResources(mnuMain, "mnuMain")
-        mnuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {mnuFile, mnuRun})
+        mnuMain.Items.AddRange(New ToolStripItem() {mnuFile, mnuRun})
         mnuMain.Name = "mnuMain"
         '
         ' mnuFile
         '
         resources.ApplyResources(mnuFile, "mnuFile")
-        mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {mnuFileExit})
+        mnuFile.DropDownItems.AddRange(New ToolStripItem() {mnuFileExit})
         mnuFile.Name = "mnuFile"
         '
         ' mnuFileExit
@@ -62,7 +62,7 @@ Partial Class MainView
         ' mnuRun
         '
         resources.ApplyResources(mnuRun, "mnuRun")
-        mnuRun.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {mnuRunCommand})
+        mnuRun.DropDownItems.AddRange(New ToolStripItem() {mnuRunCommand})
         mnuRun.Name = "mnuRun"
         '
         ' mnuRunCommand
