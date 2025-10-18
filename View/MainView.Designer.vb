@@ -25,97 +25,97 @@ Partial Class MainView
         Dim resources As System.ComponentModel.ComponentResourceManager = _
             New System.ComponentModel.ComponentResourceManager(GetType(MainView))
 
-        Me.mnuMain = New System.Windows.Forms.MenuStrip()
-        Me.mnuFile = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuFileExit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuRun = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuRunCommand = New System.Windows.Forms.ToolStripMenuItem()
+        mnuMain = New System.Windows.Forms.MenuStrip()
+        mnuFile = New System.Windows.Forms.ToolStripMenuItem()
+        mnuFileExit = New System.Windows.Forms.ToolStripMenuItem()
+        mnuRun = New System.Windows.Forms.ToolStripMenuItem()
+        mnuRunCommand = New System.Windows.Forms.ToolStripMenuItem()
 
-        Me.dlgOpen = New System.Windows.Forms.OpenFileDialog()
+        dlgOpen = New System.Windows.Forms.OpenFileDialog()
 
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtCommand = New System.Windows.Forms.TextBox()
-        Me.btnRun = New System.Windows.Forms.Button()
-        Me.txtOutput = New System.Windows.Forms.TextBox()
+        Label1 = New System.Windows.Forms.Label()
+        txtCommand = New System.Windows.Forms.TextBox()
+        btnRun = New System.Windows.Forms.Button()
+        txtOutput = New System.Windows.Forms.TextBox()
 
-        Me.mnuMain.SuspendLayout()
+        mnuMain.SuspendLayout()
         Me.SuspendLayout()
 
         '
         ' mnuMain
         '
-        resources.ApplyResources(Me.mnuMain, "mnuMain")
-        Me.mnuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFile, Me.mnuRun})
-        Me.mnuMain.Name = "mnuMain"
+        resources.ApplyResources(mnuMain, "mnuMain")
+        mnuMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {mnuFile, mnuRun})
+        mnuMain.Name = "mnuMain"
         '
         ' mnuFile
         '
-        resources.ApplyResources(Me.mnuFile, "mnuFile")
-        Me.mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFileExit})
-        Me.mnuFile.Name = "mnuFile"
+        resources.ApplyResources(mnuFile, "mnuFile")
+        mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {mnuFileExit})
+        mnuFile.Name = "mnuFile"
         '
         ' mnuFileExit
         '
-        resources.ApplyResources(Me.mnuFileExit, "mnuFileExit")
-        Me.mnuFileExit.Name = "mnuFileExit"
+        resources.ApplyResources(mnuFileExit, "mnuFileExit")
+        mnuFileExit.Name = "mnuFileExit"
         '
         ' mnuRun
         '
-        resources.ApplyResources(Me.mnuRun, "mnuRun")
-        Me.mnuRun.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuRunCommand})
-        Me.mnuRun.Name = "mnuRun"
+        resources.ApplyResources(mnuRun, "mnuRun")
+        mnuRun.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {mnuRunCommand})
+        mnuRun.Name = "mnuRun"
         '
         ' mnuRunCommand
         '
-        resources.ApplyResources(Me.mnuRunCommand, "mnuRunCommand")
-        Me.mnuRunCommand.Name = "mnuRunCommand"
+        resources.ApplyResources(mnuRunCommand, "mnuRunCommand")
+        mnuRunCommand.Name = "mnuRunCommand"
 
         '
         ' dlgOpen
         '
-        resources.ApplyResources(Me.dlgOpen, "dlgOpen")
-        Me.dlgOpen.FileName = "dlgOpen"
+        resources.ApplyResources(dlgOpen, "dlgOpen")
+        dlgOpen.FileName = "dlgOpen"
 
         '
         ' Label1
         '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
+        resources.ApplyResources(Label1, "Label1")
+        Label1.Name = "Label1"
         '
         ' txtCommand
         '
-        resources.ApplyResources(Me.txtCommand, "txtCommand")
-        Me.txtCommand.Name = "txtCommand"
+        resources.ApplyResources(txtCommand, "txtCommand")
+        txtCommand.Name = "txtCommand"
         '
         ' btnRun
         '
-        resources.ApplyResources(Me.btnRun, "btnRun")
-        Me.btnRun.Name = "btnRun"
-        Me.btnRun.UseVisualStyleBackColor = True
+        resources.ApplyResources(btnRun, "btnRun")
+        btnRun.Name = "btnRun"
+        btnRun.UseVisualStyleBackColor = True
         '
         ' txtOutput
         '
-        resources.ApplyResources(Me.txtOutput, "txtOutput")
-        Me.txtOutput.Name = "txtOutput"
-        Me.txtOutput.BackColor = SystemColors.Window
-        Me.txtOutput.ReadOnly = True
+        resources.ApplyResources(txtOutput, "txtOutput")
+        txtOutput.Name = "txtOutput"
+        txtOutput.BackColor = SystemColors.Window
+        txtOutput.ReadOnly = True
 
         '
         ' MainView
         '
         resources.ApplyResources(Me, "$this")
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.Controls.Add(Me.mnuMain)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtCommand)
-        Me.Controls.Add(Me.btnRun)
-        Me.Controls.Add(Me.txtOutput)
-        Me.MainMenuStrip = Me.mnuMain
+        AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.Controls.Add(mnuMain)
+        Me.Controls.Add(Label1)
+        Me.Controls.Add(txtCommand)
+        Me.Controls.Add(btnRun)
+        Me.Controls.Add(txtOutput)
+        Me.MainMenuStrip = mnuMain
         Me.Name = "MainView"
 
-        Me.mnuMain.ResumeLayout(False)
-        Me.mnuMain.PerformLayout()
+        mnuMain.ResumeLayout(False)
+        mnuMain.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
     End Sub
