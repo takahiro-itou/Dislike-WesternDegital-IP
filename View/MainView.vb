@@ -19,8 +19,8 @@ Dim bFlag As Boolean
     ReDim Me.m_workFiles(2)
     ReDim Me.m_fileFlags(2)
 
-    Me.m_workFiles(0) = "F:\Work\DisWdIp.txt"
-    Me.m_workFiles(1) = "I:\Work\DisWdIp.txt"
+    Me.m_workFiles(0) = "F:\Work\DisWdIp\DisWdIp.txt"
+    Me.m_workFiles(1) = "I:\Work\DisWdIp\DisWdIp.txt"
     Me.m_fileFlags(0) = True
     Me.m_fileFlags(1) = True
 
