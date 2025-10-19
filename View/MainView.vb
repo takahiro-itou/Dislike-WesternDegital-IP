@@ -30,7 +30,7 @@ Dim bFlag As Boolean
 
     For i = 0 To 1
         bFlag = False
-        curText += writeToWorkFile("F:\Work\DisWdIp.txt", outText, False, bFlag)
+        curText += writeToWorkFile(Me.m_workFiles(i), outText, False, bFlag)
         Me.m_fileFlags(i) = bFlag
     Next i
     curText += $"{Environment.NewLine}完了"
@@ -44,15 +44,19 @@ Private Sub runDiskAccess()
 ''--------------------------------------------------------------------
 ''    指定されたディスクアクセスを実行する。
 ''--------------------------------------------------------------------
+Dim i As Integer
 Dim outText As String
 Dim curText As String
+Dim bFlag As Boolean
 
     txtOutput.Text = $"{Me.m_prvText}{Environment.NewLine}"
     outText = $"{DateTime.Now:yyyy/MM/dd HH:mm:ss}  書き込み"
     curText = $"{outText}{Environment.NewLine}"
 
-    curText += writeToWorkFile("F:\Work\DisWdIp.txt", outText, True)
-    curText += writeToWorkFile("I:\Work\DisWdIp.txt", outText, True)
+    For i = 0 To 1
+        bFlag = Me.m_fileFlags(i)
+        curText += writeToWorkFile(Me.m_workFiles(i), outText, True, bFlag)
+    Next i
     curText += $"{Environment.NewLine}完了"
 
     txtOutput.Text += $"{Environment.NewLine}{curText}{Environment.NewLine}"
