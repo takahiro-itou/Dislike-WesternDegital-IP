@@ -16,7 +16,6 @@ Dim curText As String
     curText = $"{outText}{Environment.NewLine}"
 
     curText += writeToWorkFile("F:\Work\DisWdIp.txt", outText, False)
-    curText += Environment.NewLine
     curText += writeToWorkFile("I:\Work\DisWdIp.txt", outText, False)
     curText += $"{Environment.NewLine}完了"
 
@@ -37,7 +36,6 @@ Dim curText As String
     curText = $"{outText}{Environment.NewLine}"
 
     curText += writeToWorkFile("F:\Work\DisWdIp.txt", outText, True)
-    curText += Environment.NewLine
     curText += writeToWorkFile("I:\Work\DisWdIp.txt", outText, True)
     curText += $"{Environment.NewLine}完了"
 
