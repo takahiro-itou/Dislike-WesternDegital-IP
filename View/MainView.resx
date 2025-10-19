@@ -61,6 +61,7 @@
 
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
 
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -116,14 +117,14 @@
     <value>Run</value>
   </data>
 
-  <metadata name="dlgOpen.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 16</value>
+  <metadata name="dlgSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>211, 17</value>
   </metadata>
-  <data name="&gt;&gt;dlgOpen.Name" xml:space="preserve">
-    <value>dlgOpen</value>
+  <data name="&gt;&gt;dlgSave.Name" xml:space="preserve">
+    <value>dlgSave</value>
   </data>
-  <data name="&gt;&gt;dlgOpen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;dlgSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
   <data name="&gt;&gt;Label1.Name" xml:space="preserve">
@@ -238,6 +239,17 @@
   </data>
   <data name="mnuRunCommand.Text" xml:space="preserve">
     <value>Run &amp;Command</value>
+  </data>
+
+  <metadata name="tmrDisk.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>122, 17</value>
+  </metadata>
+
+  <data name="&gt;&gt;tmrDisk.Name" xml:space="preserve">
+    <value>tmrDisk</value>
+  </data>
+  <data name="&gt;&gt;tmrDisk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 
   <data name="&gt;&gt;txtCommand.Name" xml:space="preserve">
