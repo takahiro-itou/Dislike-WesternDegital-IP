@@ -5,13 +5,12 @@ Private Sub RunDiskAccess()
 ''    指定されたディスクアクセスを実行する。
 ''--------------------------------------------------------------------
 Dim encUtf As System.Text.Encoding
-Dim sw As System.IO.StreamWriter
 Dim outText As String
 
     outText = $"書き込み時刻：{DateTime.Now:yyyy/MM/DD HH:mm:ss}"
     encUtf = System.Text.Encoding.UTF8
 
-    Using sw = New System.IO.StreamWriter("F:\\DisWdIp.txt", True, encUtf)
+    Using sw As New System.IO.StreamWriter("F:\\DisWdIp.txt", True, encUtf)
         sw.WriteLine(outText)
     End Using
 
