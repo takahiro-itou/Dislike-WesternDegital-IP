@@ -30,7 +30,7 @@ Dim outText As String
 
 End Sub
 
-Private Sub RunDiskAccess()
+Private Sub runDiskAccess()
 ''--------------------------------------------------------------------
 ''    指定されたディスクアクセスを実行する。
 ''--------------------------------------------------------------------
@@ -88,7 +88,7 @@ Private Sub btnRun_Click(sender As Object, e As EventArgs) Handles _
 ''    入力したコマンドを実行する。
 ''--------------------------------------------------------------------
 
-    RunDiskAccess()
+    runDiskAccess()
 End Sub
 
 Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles _
@@ -107,7 +107,7 @@ Private Sub mnuRunCommand_Click(sender As Object, e As EventArgs) Handles _
 ''    メニュー「実行」－「コマンドを実行」
 ''--------------------------------------------------------------------
 
-    RunDiskAccess()
+    runDiskAccess()
 End Sub
 
 
@@ -117,7 +117,7 @@ Private Sub tmrDisk_Tick(sender As Object, e As EventArgs) Handles _
 ''    「タイマー」のイベントハンドラ
 ''--------------------------------------------------------------------
 
-    RunDiskAccess()
+    runDiskAccess()
 End Sub
 
 End Class
