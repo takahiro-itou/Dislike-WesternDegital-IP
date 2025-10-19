@@ -8,28 +8,19 @@ Private Sub initializeWorkFiles()
 ''--------------------------------------------------------------------
 ''    作業用のファイルを初期化する。
 ''--------------------------------------------------------------------
-Dim encUtf As System.Text.Encoding
 Dim outText As String
+Dim curText As String
 
     outText = $"{DateTime.Now:yyyy/MM/dd HH:mm:ss}  初期化"
-    encUtf = System.Text.Encoding.UTF8
+    curText = outText
+
     txtOutput.Text = $"{Environment.NewLine}"
+    curText += writeToWorkFile("F:\Work\DisWdIp.txt", outText, False)
+    cutText += writeToWorkFile("I:\Work\DisWdIp.txt", outText, False)
+    curText += "完了"
 
-    Try
-        Using sw As New System.IO.StreamWriter("F:\\Work\\DisWdIp.txt", False, encUtf)
-            sw.WriteLine(outText)
-        End Using
-    Catch e As Exception
-        txtOutput.Text += $"ファイルにアクセスできません：{e.Message}{Environment.NewLine}"
-    End Try
-
-    Try
-        Using sw As New System.IO.StreamWriter("I:\\Work\\DisWdIp.txt", False, encUtf)
-            sw.WriteLine(outText)
-        End Using
-    Catch e As Exception
-        txtOutput.Text += $"ファイルにアクセスできません：{e.Message}{Environment.NewLine}"
-    End Try
+    txtOutput.Text += $"{Environment.NewLine}{curText}{Environment.NewLine}"
+    Me.m_prvText = curText
 
 End Sub
 
@@ -50,6 +41,7 @@ Dim curText As String
 
     txtOutput.Text += $"{Environment.NewLine}{curText}{Environment.NewLine}"
     Me.m_prvText = curText
+
 End Sub
 
 Private Function writeToWorkFile(
