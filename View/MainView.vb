@@ -44,6 +44,7 @@ Dim curText As String
 
 End Sub
 
+
 Private Function writeToWorkFile(
         ByVal fileName As String, ByVal strText As String,
         ByVal bAppend As Boolean)
@@ -68,7 +69,8 @@ Dim encUtf As System.Text.Encoding
         writeToWorkFile += $"ファイルにアクセスできません：{e.Message}{Environment.NewLine}"
     End Try
 
-End Sub
+End Function
+
 
 Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
             MyBase.Load
