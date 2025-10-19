@@ -32,7 +32,8 @@ Partial Class MainView
         mnuRun = New ToolStripMenuItem()
         mnuRunCommand = New ToolStripMenuItem()
 
-        dlgOpen = New OpenFileDialog()
+        tmrDisk = New Timer(components)
+        dlgSave = New SaveFileDialog()
 
         Label1 = New Label()
         txtCommand = New TextBox()
@@ -72,10 +73,16 @@ Partial Class MainView
         mnuRunCommand.Name = "mnuRunCommand"
 
         '
-        ' dlgOpen
+        ' tmrDisk
         '
-        resources.ApplyResources(dlgOpen, "dlgOpen")
-        dlgOpen.FileName = "dlgOpen"
+        resources.ApplyResources(tmrDisk, "tmrDisk")
+        tmrDisk.Interval = 60000
+
+        '
+        ' dlgSave
+        '
+        resources.ApplyResources(dlgSave, "dlgSave")
+        dlgSave.FileName = "dlgSave"
 
         '
         ' Label1
@@ -127,7 +134,8 @@ Partial Class MainView
     Friend WithEvents mnuRun As ToolStripMenuItem
     Friend WithEvents mnuRunCommand As ToolStripMenuItem
 
-    Friend WithEvents dlgOpen As OpenFileDialog
+    Friend WithEvents tmrDisk As Timer
+    Friend WithEvents dlgSave As SaveFileDialog
 
     Friend WithEvents Label1 As Label
     Friend WithEvents txtCommand As TextBox
