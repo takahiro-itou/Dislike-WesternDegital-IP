@@ -10,9 +10,13 @@ Dim outText As String
     outText = $"書き込み時刻：{DateTime.Now:yyyy/MM/dd HH:mm:ss}"
     encUtf = System.Text.Encoding.UTF8
 
-    Using sw As New System.IO.StreamWriter("F:\\DisWdIp.txt", True, encUtf)
-        sw.WriteLine(outText)
-    End Using
+    Try
+        Using sw As New System.IO.StreamWriter("F:\\DisWdIp.txt", True, encUtf)
+            sw.WriteLine(outText)
+        End Using
+    Catch e As Exception
+        txtOutput.Text += $"ファイルにアクセスできません：{e.Message}{Environment.NewLine}"
+    End Try
 
     txtOutput.Text += $"{outText}{Environment.NewLine}"
 
