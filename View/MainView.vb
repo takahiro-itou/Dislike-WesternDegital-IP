@@ -34,32 +34,41 @@ Private Sub RunDiskAccess()
 ''--------------------------------------------------------------------
 ''    指定されたディスクアクセスを実行する。
 ''--------------------------------------------------------------------
-Dim encUtf As System.Text.Encoding
 Dim outText As String
 
-    outText = $"書き込み時刻：{DateTime.Now:yyyy/MM/dd HH:mm:ss}"
-    encUtf = System.Text.Encoding.UTF8
+    outText = $"{DateTime.Now:yyyy/MM/dd HH:mm:ss}  書き込み"
 
-    Try
-        Using sw As New System.IO.StreamWriter("F:\\Work\\DisWdIp.txt", True, encUtf)
-            sw.WriteLine(outText)
-        End Using
-    Catch e As Exception
-        txtOutput.Text += $"ファイルにアクセスできません：{e.Message}{Environment.NewLine}"
-    End Try
-
-    Try
-        Using sw As New System.IO.StreamWriter("I:\\Work\\DisWdIp.txt", True, encUtf)
-            sw.WriteLine(outText)
-        End Using
-    Catch e As Exception
-        txtOutput.Text += $"ファイルにアクセスできません：{e.Message}{Environment.NewLine}"
-    End Try
-
-    txtOutput.Text += $"{outText}{Environment.NewLine}"
+    txtOutput.Text = $"{outText}{Environment.NewLine}"
+    writeToWorkFile("F:\Work\DisWdIp.txt", True, encUtf);
+    writeToWorkFile("I:\Work\DisWdIp.txt", True, encUtf);
+    txtOutput.Text += "完了"
 
 End Sub
 
+Private Sub writeToWorkFile(
+        ByVal fileName As String, ByVal strText As String,
+        ByVal bAppend As Boolean)
+''--------------------------------------------------------------------
+''    指定されたファイルに書き込みを行う
+''
+''  @param [in] fileName    書き込み先のファイル名
+''  @param [in] strText     書き込む内容
+''  @param [in] bAppend     真ならば追記を行う
+''--------------------------------------------------------------------
+Dim encUtf As System.Text.Encoding
+
+    encUtf = System.Text.Encoding.UTF8
+
+    Try
+        Using sw As New System.IO.StreamWriter(fileName, bAppend, encUtf)
+            sw.WriteLine(strText)
+        End Using
+        txtOutput.Text += $"ファイル {fileName} に書き込み成功!{Environment.NewLine}"
+    Catch e As Exception
+        txtOutput.Text += $"ファイルにアクセスできません：{e.Message}{Environment.NewLine}"
+    End Try
+
+End Sub
 
 Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
             MyBase.Load
