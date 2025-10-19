@@ -55,6 +55,7 @@ Dim bFlag As Boolean
 
     For i = 0 To 1
         bFlag = Me.m_fileFlags(i)
+        If (bFlag = False) Then Continue For
         curText += writeToWorkFile(Me.m_workFiles(i), outText, True, bFlag)
     Next i
     curText += $"{Environment.NewLine}完了"
