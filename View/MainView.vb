@@ -1,8 +1,8 @@
 ﻿Public Class MainView
 
-Private Sub RunCommand(ByVal command As String)
+Private Sub RunDiskAccess()
 ''--------------------------------------------------------------------
-''    指定したコマンドを実行する。
+''    指定されたディスクアクセスを実行する。
 ''--------------------------------------------------------------------
 
     Using process As New System.Diagnostics.Process()
@@ -32,7 +32,7 @@ Private Sub btnRun_Click(sender As Object, e As EventArgs) Handles _
 ''    入力したコマンドを実行する。
 ''--------------------------------------------------------------------
 
-    RunCommand(txtCommand.Text)
+    RunDiskAccess()
 End Sub
 
 Private Sub mnuFileExit_Click(sender As Object, e As EventArgs) Handles _
@@ -51,7 +51,17 @@ Private Sub mnuRunCommand_Click(sender As Object, e As EventArgs) Handles _
 ''    メニュー「実行」－「コマンドを実行」
 ''--------------------------------------------------------------------
 
-    RunCommand(txtCommand.Text)
+    RunDiskAccess()
+End Sub
+
+
+Private Sub tmrDisk_Tick(sender As Object, e As EventArgs) Handles _
+            tmrDisk.Tick
+''--------------------------------------------------------------------
+''    「タイマー」のイベントハンドラ
+''--------------------------------------------------------------------
+
+    RunDiskAccess()
 End Sub
 
 End Class
