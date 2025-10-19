@@ -1,7 +1,7 @@
 ﻿Public Class MainView
 
 
-Private Sub InitializeWorkFiles()
+Private Sub initializeWorkFiles()
 ''--------------------------------------------------------------------
 ''    作業用のファイルを初期化する。
 ''--------------------------------------------------------------------
@@ -76,7 +76,7 @@ Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
 ''    フォームのロードイベントハンドラ。
 ''--------------------------------------------------------------------
 
-    InitializeWorkFiles()
+    initializeWorkFiles()
 End Sub
 
 
