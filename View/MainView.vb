@@ -7,14 +7,14 @@ Private Sub RunDiskAccess()
 Dim encUtf As System.Text.Encoding
 Dim outText As String
 
-    outText = $"書き込み時刻：{DateTime.Now:yyyy/MM/DD HH:mm:ss}"
+    outText = $"書き込み時刻：{DateTime.Now:yyyy/MM/dd HH:mm:ss}"
     encUtf = System.Text.Encoding.UTF8
 
     Using sw As New System.IO.StreamWriter("F:\\DisWdIp.txt", True, encUtf)
         sw.WriteLine(outText)
     End Using
 
-    txtOutput.Text += $"{outText}\n"
+    txtOutput.Text += $"{outText}{Environment.NewLine}"
 
 End Sub
 
