@@ -1,5 +1,35 @@
 ﻿Public Class MainView
 
+
+Private Sub InitializeWorkFiles()
+''--------------------------------------------------------------------
+''    作業用のファイルを初期化する。
+''--------------------------------------------------------------------
+Dim encUtf As System.Text.Encoding
+Dim outText As String
+
+    outText = $"{DateTime.Now:yyyy/MM/dd HH:mm:ss}  初期化"
+    encUtf = System.Text.Encoding.UTF8
+    txtOutput.Text = $"{Environment.NewLine}"
+
+    Try
+        Using sw As New System.IO.StreamWriter("F:\\Work\\DisWdIp.txt", False, encUtf)
+            sw.WriteLine(outText)
+        End Using
+    Catch e As Exception
+        txtOutput.Text += $"ファイルにアクセスできません：{e.Message}{Environment.NewLine}"
+    End Try
+
+    Try
+        Using sw As New System.IO.StreamWriter("I:\\Work\\DisWdIp.txt", False, encUtf)
+            sw.WriteLine(outText)
+        End Using
+    Catch e As Exception
+        txtOutput.Text += $"ファイルにアクセスできません：{e.Message}{Environment.NewLine}"
+    End Try
+
+End Sub
+
 Private Sub RunDiskAccess()
 ''--------------------------------------------------------------------
 ''    指定されたディスクアクセスを実行する。
@@ -28,6 +58,16 @@ Dim outText As String
 
     txtOutput.Text += $"{outText}{Environment.NewLine}"
 
+End Sub
+
+
+Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
+            MyBase.Load
+''--------------------------------------------------------------------
+''    フォームのロードイベントハンドラ。
+''--------------------------------------------------------------------
+
+    InitializeWorkFiles()
 End Sub
 
 
