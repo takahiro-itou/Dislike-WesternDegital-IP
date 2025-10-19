@@ -1,6 +1,9 @@
 ﻿Public Class MainView
 
 
+Private m_prvText As String
+
+
 Private Sub initializeWorkFiles()
 ''--------------------------------------------------------------------
 ''    作業用のファイルを初期化する。
@@ -35,17 +38,21 @@ Private Sub runDiskAccess()
 ''    指定されたディスクアクセスを実行する。
 ''--------------------------------------------------------------------
 Dim outText As String
+Dim curText As String
 
     outText = $"{DateTime.Now:yyyy/MM/dd HH:mm:ss}  書き込み"
+    curText = outText
 
-    txtOutput.Text = $"{outText}{Environment.NewLine}"
-    writeToWorkFile("F:\Work\DisWdIp.txt", True, encUtf);
-    writeToWorkFile("I:\Work\DisWdIp.txt", True, encUtf);
-    txtOutput.Text += "完了"
+    txtOutput.Text = $"{Me.m_prvText}{Environment.NewLine}"
+    curText += writeToWorkFile("F:\Work\DisWdIp.txt", outText, True)
+    cutText += writeToWorkFile("I:\Work\DisWdIp.txt", outText, True)
+    curText += "完了"
 
+    txtOutput.Text += $"{Environment.NewLine}{curText}{Environment.NewLine}"
+    Me.m_prvText = curText
 End Sub
 
-Private Sub writeToWorkFile(
+Private Function writeToWorkFile(
         ByVal fileName As String, ByVal strText As String,
         ByVal bAppend As Boolean)
 ''--------------------------------------------------------------------
@@ -58,14 +65,15 @@ Private Sub writeToWorkFile(
 Dim encUtf As System.Text.Encoding
 
     encUtf = System.Text.Encoding.UTF8
+    writeToWorkFile = ""
 
     Try
         Using sw As New System.IO.StreamWriter(fileName, bAppend, encUtf)
             sw.WriteLine(strText)
         End Using
-        txtOutput.Text += $"ファイル {fileName} に書き込み成功!{Environment.NewLine}"
+        writeToWorkFile += $"ファイル {fileName} に書き込み成功!{Environment.NewLine}"
     Catch e As Exception
-        txtOutput.Text += $"ファイルにアクセスできません：{e.Message}{Environment.NewLine}"
+        writeToWorkFile += $"ファイルにアクセスできません：{e.Message}{Environment.NewLine}"
     End Try
 
 End Sub
@@ -76,7 +84,10 @@ Private Sub MainView_Load(sender As Object, e As EventArgs) Handles _
 ''    フォームのロードイベントハンドラ。
 ''--------------------------------------------------------------------
 
+    Me.m_prvText = "ロード中"
+
     initializeWorkFiles()
+    tmrDisk.Enabled = True
 End Sub
 
 
