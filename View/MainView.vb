@@ -4,22 +4,18 @@ Private Sub RunDiskAccess()
 ''--------------------------------------------------------------------
 ''    指定されたディスクアクセスを実行する。
 ''--------------------------------------------------------------------
+Dim encUtf As System.Text.Encoding
+Dim sw As System.IO.StreamWriter
+Dim outText As String
 
-    Using process As New System.Diagnostics.Process()
-        process.StartInfo.FileName = "ipconfig.exe"
-        process.StartInfo.UseShellExecute = False
-        process.StartInfo.RedirectStandardInput = False
-        process.StartInfo.RedirectStandardOutput = True
-        process.StartInfo.RedirectStandardError = False
-        process.Start()
+    outText = $"書き込み時刻：{DateTime.Now:yyyy/MM/DD HH:mm:ss}"
+    encUtf = System.Text.Encoding.UTF8
 
-        Dim Reader As System.IO.StreamReader = process.StandardOutput
-        Dim output As String = Reader.ReadToEnd()
-
-        txtOutput.Text = output
-        process.WaitForExit()
-        process.Close()
+    Using sw = New System.IO.StreamWriter("F:\\DisWdIp.txt", True, encUtf)
+        sw.WriteLine(outText)
     End Using
+
+    txtOutput.Text += $"{outText}\n"
 
 End Sub
 
