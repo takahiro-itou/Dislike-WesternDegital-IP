@@ -11,13 +11,14 @@ Private Sub initializeWorkFiles()
 Dim outText As String
 Dim curText As String
 
+    txtOutput.Text = $"{Me.m_prvText}{Environment.NewLine}"
     outText = $"{DateTime.Now:yyyy/MM/dd HH:mm:ss}  初期化"
-    curText = outText
+    curText = $"{outText}{Environment.NewLine}"
 
-    txtOutput.Text = $"{Environment.NewLine}"
     curText += writeToWorkFile("F:\Work\DisWdIp.txt", outText, False)
+    curText += Environment.NewLine
     curText += writeToWorkFile("I:\Work\DisWdIp.txt", outText, False)
-    curText += "完了"
+    curText += $"{Environment.NewLine}完了"
 
     txtOutput.Text += $"{Environment.NewLine}{curText}{Environment.NewLine}"
     Me.m_prvText = curText
@@ -31,13 +32,14 @@ Private Sub runDiskAccess()
 Dim outText As String
 Dim curText As String
 
-    outText = $"{DateTime.Now:yyyy/MM/dd HH:mm:ss}  書き込み"
-    curText = outText
-
     txtOutput.Text = $"{Me.m_prvText}{Environment.NewLine}"
+    outText = $"{DateTime.Now:yyyy/MM/dd HH:mm:ss}  書き込み"
+    curText = $"{outText}{Environment.NewLine}"
+
     curText += writeToWorkFile("F:\Work\DisWdIp.txt", outText, True)
+    curText += Environment.NewLine
     curText += writeToWorkFile("I:\Work\DisWdIp.txt", outText, True)
-    curText += "完了"
+    curText += $"{Environment.NewLine}完了"
 
     txtOutput.Text += $"{Environment.NewLine}{curText}{Environment.NewLine}"
     Me.m_prvText = curText
