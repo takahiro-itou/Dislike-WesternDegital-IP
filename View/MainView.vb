@@ -16,7 +16,7 @@ Dim curText As String
 
     txtOutput.Text = $"{Environment.NewLine}"
     curText += writeToWorkFile("F:\Work\DisWdIp.txt", outText, False)
-    cutText += writeToWorkFile("I:\Work\DisWdIp.txt", outText, False)
+    curText += writeToWorkFile("I:\Work\DisWdIp.txt", outText, False)
     curText += "完了"
 
     txtOutput.Text += $"{Environment.NewLine}{curText}{Environment.NewLine}"
@@ -36,7 +36,7 @@ Dim curText As String
 
     txtOutput.Text = $"{Me.m_prvText}{Environment.NewLine}"
     curText += writeToWorkFile("F:\Work\DisWdIp.txt", outText, True)
-    cutText += writeToWorkFile("I:\Work\DisWdIp.txt", outText, True)
+    curText += writeToWorkFile("I:\Work\DisWdIp.txt", outText, True)
     curText += "完了"
 
     txtOutput.Text += $"{Environment.NewLine}{curText}{Environment.NewLine}"
