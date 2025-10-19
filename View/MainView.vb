@@ -1,6 +1,9 @@
 ﻿Public Class MainView
 
 
+Private m_workFiles() As String
+Private m_fileFlags() As Boolean
+
 Private m_prvText As String
 
 
