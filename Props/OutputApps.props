@@ -2,9 +2,9 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <IntDir>$(SolutionDir)Objs\$(Platform)-$(Configuration)\$(TargetFramework)\$(ProjectName)\</IntDir>
-    <IntermediateOutputPath>$(SolutionDir)Objs\$(Platform)-$(Configuration)\$(TargetFramework)\$(ProjectName)\</IntermediateOutputPath>
-    <OutDir>$(SolutionDir)Bin\$(Platform)-$(Configuration)-$(TargetFramework)\</OutDir>
+    <IntDir>$(SolutionDir)Objs\$(Platform)-$(Configuration)\$(ProjectName)\</IntDir>
+    <IntermediateOutputPath>$(SolutionDir)Objs\$(Platform)-$(Configuration)\$(ProjectName)\</IntermediateOutputPath>
+    <OutDir>$(SolutionDir)Bin\$(Platform)-$(Configuration)\$(TargetFramework)\</OutDir>
   </PropertyGroup>
 
 </Project>
