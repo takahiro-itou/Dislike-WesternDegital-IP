@@ -4,10 +4,11 @@
   <PropertyGroup>
     <OBJ_BASE_DIR>$(SolutionDir)Objs</OBJ_BASE_DIR>
     <BIN_BASE_DIR>$(SolutionDir)Bin</BIN_BASE_DIR>
+    <CONFIG_NAME>$(Platform)-$(Configuration)</CONFIG_NAME>
 
-    <IntDir>$(OBJ_BASE_DIR)\$(Platform)-$(Configuration)\$(MSBuildProjectName)\</IntDir>
+    <IntDir>$(OBJ_BASE_DIR)\$(CONFIG_NAME)\$(MSBuildProjectName)\</IntDir>
     <IntermediateOutputPath>$(IntDir)</IntermediateOutputPath>
-    <OutDir>$(BIN_BASE_DIR)\$(Platform)-$(Configuration)\$(TargetFramework)\</OutDir>
+    <OutDir>$(BIN_BASE_DIR)\$(CONFIG_NAME)\$(TargetFramework)\</OutDir>
   </PropertyGroup>
 
 </Project>
